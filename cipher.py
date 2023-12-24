@@ -1,10 +1,11 @@
-text = 'Hello World'
-shift = 1
-alphabet = 'abcdefghijklmnopqrstuvwxyz'
-new_char = ''
-
+text = 'Hello World boby weight'
+characters = 'abcdefghijklmnopqurstuvwxyz'
+shift = 3
+encrypted_text = ' '
 for char in text.lower():
-    index = alphabet.find(char)
-    new_index = (index - 5) + shift
-    new_char =  new_char + alphabet[new_index]
-    print('char:',char,'new char:',new_char);
+    if char == ' ':
+        encrypted_text += ' '
+    index = characters.find(char)
+    new_index = (index + shift) % 26
+    encrypted_text += characters[new_index]
+    print(encrypted_text)
